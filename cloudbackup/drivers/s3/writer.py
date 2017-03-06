@@ -135,4 +135,3 @@ class MultiPartUploader(object):
         self._wait_for_upload_threads()
 
         self.mp.complete_upload()
-

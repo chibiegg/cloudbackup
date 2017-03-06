@@ -28,7 +28,7 @@ class BaseCommand(object):
     args = ''
 
     def __init__(self):
-        logger = logging.getLogger("zfsglacier")
+        logger = logging.getLogger("cloudbackup")
         handler = logging.StreamHandler(sys.stderr)
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         handler.setFormatter(formatter)
@@ -152,4 +152,3 @@ def execute_from_command_line(argv=None):
 
 if __name__ == "__main__":
     execute_from_command_line()
-
