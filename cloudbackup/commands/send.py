@@ -69,7 +69,6 @@ class Command(BaseCommand):
                 raise CommandError("Invalid output '%s'".format(options["output"]))
 
             bucket_name, keyname = m.groups()
-            print((bucket_name, keyname))
 
             connection = boto.connect_s3(self.config.get("s3").get("token"), self.config.get("s3").get("secret"), host=self.config.get("s3").get("host"))
             bucket = connection.get_bucket(bucket_name)
@@ -106,5 +105,3 @@ class Command(BaseCommand):
             pbar.finish()
 
         log.info("Send stream finished from '%s' to '%s'", options["input"], options["output"])
-
-
